@@ -1,2 +1,2 @@
-# PokeGAN
-Generative adversarial network for generating Pokemon sprites
+# Generated_Sprites
+The output of the training will be saved here.
