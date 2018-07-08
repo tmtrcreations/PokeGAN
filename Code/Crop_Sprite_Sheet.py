@@ -29,11 +29,11 @@ for row_ind in range(0, ROW_SIZE):
         img_new = img.crop((col_ind*SMALL_SPRITE_WIDTH, row_ind*SMALL_SPRITE_HEIGHT,\
                             col_ind*SMALL_SPRITE_WIDTH+SMALL_SPRITE_WIDTH,\
                             row_ind*SMALL_SPRITE_HEIGHT+SMALL_SPRITE_HEIGHT))
-        #img_new_jpg = img_new.convert("RGB")
-        img_new.save("../Images/Training_Images/Single_Sprites/img"+str(count)+".png")
-        img_new = img_new.transpose(Image.FLIP_LEFT_RIGHT)
-        #img_new_jpg = img_new.convert("RGB")
-        img_new.save("../Images/Training_Images/Single_Sprites_Flipped/img_flipped"+str(count)+".png")
+        background = Image.new("RGB", img_new.size, (255, 255, 255))
+        background.paste(img_new, mask=img_new.split()[3])
+        background.save("../Images/Training_Images/Single_Sprites/img"+str(count)+".png")
+        background = background.transpose(Image.FLIP_LEFT_RIGHT)
+        background.save("../Images/Training_Images/Single_Sprites_Flipped/img_flipped"+str(count)+".png")
         count = count + 1
         if count > 1722:
             break

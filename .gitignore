@@ -1,2 +1,6 @@
 
 .DS_Store
+*.png
+!img1.png
+!img_flipped1.png
+!Sample_Gen.png
